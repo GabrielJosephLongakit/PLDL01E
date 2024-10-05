@@ -20,6 +20,8 @@ class Employee_Info:
         print("Employee Code:", self.emp_code)
         print("Cut-off Date:", self.salary_cut_off)
 
+class Employee_Salary:
+
     def get_basic_pay(self, emp_rate_per_hour, emp_num_of_hours_per_payday):
         self.basic_pay = emp_rate_per_hour * emp_num_of_hours_per_payday
         return self.basic_pay
