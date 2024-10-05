@@ -21,6 +21,29 @@ class Employee_Info:
         print("Cut-off Date:", self.salary_cut_off)
 
 class Employee_Salary:
+    def __init__(self):
+        self.sss_contribution = 0.00
+        self.hdmf_contribution = 100.00
+        self.philhealth_contribution = 0.00
+        self.tax_contribution = 0.00
+        self.emp_absences = 0.00
+        self.emp_tardiness = 0.00
+        self.total_deduction = 0.00
+        self.emp_rate_per_hour = 0.00
+        self.emp_num_of_hours_per_payday = 0.00
+        self.hour_overtime = 0.00
+        self.overtime_pay = 0.00
+        self.basic_pay = 0.00
+        self.honorarium_pay = 0.00
+        self.emp_num_of_absences = 0.00
+        self.tardiness_deduction = 0.00
+        self.tardiness_num_hours = 0
+        self.emp_gross_earnings = 0.00
+        self.emp_net_income = 0.00
+
+    def get_total_deduction(self, sss_contribution, philhealth_contribution, tax_contribution, emp_absences, emp_tardiness):
+        self.total_deduction = sss_contribution + philhealth_contribution + tax_contribution + emp_absences + emp_tardiness
+        return self.total_deduction
 
     def get_basic_pay(self, emp_rate_per_hour, emp_num_of_hours_per_payday):
         self.basic_pay = emp_rate_per_hour * emp_num_of_hours_per_payday
@@ -30,8 +53,8 @@ class Employee_Salary:
         self.emp_absences = emp_num_of_absences * emp_rate_per_hour
         return self.emp_absences
 
-    def get_overtime_pay(self, emp_hour_overtime, emp_rate_per_hour):
-        self.overtime_pay = self.emp_hour_overtime * emp_rate_per_hour
+    def get_overtime_pay(self, emp_rate_per_hour, hour_overtime):
+        self.overtime_pay = hour_overtime * emp_rate_per_hour
         return self.overtime_pay
 
     def get_tardiness_deduction(self, emp_rate_per_hour, tardiness_num_hours):
