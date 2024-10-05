@@ -44,15 +44,9 @@ overtime_pay = no_hrs_overtime * rate_per_hr
 
 absences = no_hrs_absent * rate_per_hr
 
-
-
 honorarium = no_hrs_honorarium * rate_per_hr
 
-gross_income = basic_pay + overtime_pay + honorarium
-
-
-
-net_income = gross_income - deduction
+tardiness = no_hrs_tardy * rate_per_hr
 
 #if statements
 
@@ -128,22 +122,23 @@ elif gross_income == 100000:
 else:
     philhealth = 0
 
-if 0 <= gross_income < 20833:
+if 0 <= gross_income <= 20832.99:
     tax = 0.00
-elif 20833 <= gross_income < 33332:
-    tax = 0.15/20833
-elif 33333 <= gross_income < 66666:
-    tax = 1875 + 0.20/33333
-elif 66667 <= gross_income < 166666:
-    tax = 8541.80 + 0.25/66667
-elif 166667 <= gross_income < 666666:
-    tax = 33541.80 + 0.30/166667
+elif 20833 <= gross_income <= 33332:
+    tax = 0.15 * (gross_income - 20833)
+elif 33333 <= gross_income <= 66666:
+    tax = 1875 + 0.20 * (gross_income - 33333)
+elif 66667 <= gross_income <= 166666:
+    tax = 8541.80 + 0.25 * (gross_income - 66667)
+elif 166666 <= gross_income <= 666666:
+    tax = 33541.80 + 0.30 * (gross_income - 166667)
 else:
-    tax = 183541.80 + 0.35/666667
+    tax = 183541.80 + 0.35 * (gross_income - 666667)
 
-tardiness = no_hrs_tardy * rate_per_hr
 
 deduction = absences + tardiness + tax + sss + philhealth + sss + pagibig
+
+net_income = gross_income - deduction
 
 print("Company name: ", company_name)
 print("Department: ", department)
