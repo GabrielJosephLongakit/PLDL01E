@@ -32,9 +32,8 @@ class electric_bill:
 
 #displaying of data and total bill
 
-
-emp1 = electric_bill()
-emp1.__bill_computation__()
+electric_bill()
+emp1__bill_computation__()
 emp1.__previous_billing__()
 emp1.__charges_for_billing__()
 emp1.__total_computation__()

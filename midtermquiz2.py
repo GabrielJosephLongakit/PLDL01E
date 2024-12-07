@@ -1,6 +1,4 @@
-import midtermquiz
-
-
+#initialization of variables
 def __init__(self):
     self.name = ""
     self.address = ""
@@ -16,7 +14,7 @@ def __init__(self):
     self.total_current_amount = 0
     self.rate_per_kilowatts = ""
 
-
+#inputting of customer information and basic billing info
 class billing_statement:
 
     def __init__(self):
@@ -34,11 +32,8 @@ class billing_statement:
         self.total_current_amount = float(input("Total Current Amount: "))
         self.rate_per_kilowatts = input("Rate per kilowatt: ")
 
-
-
-
-
-        def __display_receipt__(self):
+#output of info
+    def __display_receipt__(self):
         print("Name:", self.name)
         print("Address:", self.address)
         print("")
@@ -59,18 +54,8 @@ class billing_statement:
 
 
 class ElectricityBill:
-    def __init__(self, previous_balance, generation, transmission, system_loss, distribution, subsidies, taxes, universal, fit_all, installment=0):
-        self.previous_balance = previous_balance
-        self.generation = generation
-        self.transmission = transmission
-        self.system_loss = system_loss
-        self.distribution = distribution
-        self.subsidies = subsidies
-        self.govt_taxes = taxes
-        self.universal = universal
-        self.fit_all = fit_all
-        self.installment = installment
- def __display_receipt__(self):
+
+    def __display_receipt__(self):
         print("Name:", self.name)
         print("Address:", self.address)
         print("")
@@ -89,5 +74,5 @@ class ElectricityBill:
         print("Actual Consumption:", self.actual_consumption)
         print("Charges", self.charges)
 
-emp1 = ElectricityBill()
-emp1.__display_receipt__
+ElectricityBill()
+billing_statement()
