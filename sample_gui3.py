@@ -4,12 +4,12 @@ from PIL import Image, ImageTk
 
 window = tk.Tk()
 window.title("Login System")
-image = Image.open(r"C:\Users\admin\Documents\cpe201_longakit\PLDL_LONGAKIT\PLDL01E\arcane_playground.jpg")
+image = Image.open(r"C:\Users\longa\PycharmProjects\PLDL01E\lpuc.JPG")
 bck_pic = ImageTk.PhotoImage(image.resize((1920, 1080)))
 lbl = Label(window, image=bck_pic)
 lbl.place(x=1, y=1)
 
-frame=Frame(window, width=300, height=300, bg='floral white').place(x=190, y=450)
+frame=Frame(window, width=300, height=300, bg='floral white').place(x=19    0, y=450)
 
 heading = Label(frame, text='Sign In', fg='navy blue', bg='white', font=('Calibre', 21, 'bold'))
 heading.place(x=190, y=450)
