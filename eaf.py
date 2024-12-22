@@ -5,8 +5,8 @@ from PIL import Image, ImageTk
 from tkinter import ttk
 #window
 window = tk.Tk()
-window.title("Employee Registration")
-window.geometry('1520x900')
+window.title("Enrollment Assessment Form")
+window.geometry('1400x800')
 
 class design_gui_inteface():
     def __int__(self, frame1):
@@ -67,6 +67,23 @@ class design_gui_inteface():
         self.textbox = Text(width=40, height=1, fg='black', bg='white', font=('Times New Roman', 11, 'bold'))
         self.textbox.place(x=x, y=y)
 
+    def textbox_design3(self, x, y):
+        self.textbox = Text(width=15, height=1, fg='black', bg='white', font=('Times New Roman', 11, 'bold'))
+        self.textbox.place(x=x, y=y)
+
+    def totalunits(self, x, y, text_value):
+        self.text_value = text_value
+        self.totalunits = Label(text=text_value, fg='black', font=('Times New Roman', 15, 'bold'))
+        self.totalunits.place(x=x,y=y)
+
+    def image_design(self, image_location, x, y, length, width):
+        self.length = length
+        self.width = width
+        self.image_location = image_location
+        self.image = Image.open(image_location)
+        self.bck_pic = ImageTk.PhotoImage(self.image.resize((length, width)))
+        self.lbl = Label(window, image=self.bck_pic)
+        self.lbl.place(x=x, y=y)
 
 my_gui_design = design_gui_inteface()
 my_gui_design.heading_design(400, 20, 'Lyceum of the Philippines University')
@@ -92,4 +109,8 @@ coursedesc3 = my_gui_design.textbox_design2(660, 420)
 units = my_gui_design.textbox_design1(1000, 360)
 units2 = my_gui_design.textbox_design1(1000, 390)
 units3 = my_gui_design.textbox_design1(1000, 420)
+my_gui_design.totalunits(440, 450, 'TOTAL UNITS')
+totalunits = my_gui_design.textbox_design3(1000, 450)
+
+uploaded_image = my_gui_design.image_design(r'C:\Users\longa\PycharmProjects\PLDL01E\lpulogo.png', 222, 75, 200, 200)
 window.mainloop()
