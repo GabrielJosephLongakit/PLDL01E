@@ -3,6 +3,7 @@ from threading import main_thread
 from tkinter import *
 from PIL import Image, ImageTk
 from tkinter import ttk
+
 #window
 window = tk.Tk()
 window.title("Enrollment Assessment Form")
